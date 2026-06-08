@@ -1,0 +1,22 @@
+# One-click deploy to Render (https://render.com) straight from this GitHub repo.
+# Render runs the Node server as a real long-lived process — so /api/* and the
+# live SSE feed work (a static host cannot run this backend).
+#
+# Steps: Render → New → Blueprint → pick this repo → set ANTHROPIC_API_KEY when
+# prompted. Render injects PORT automatically; the server reads it.
+services:
+  - type: web
+    name: gohighlevel-lead-demo
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false          # set this secret in the Render dashboard
+      - key: CLAUDE_MODEL
+        value: claude-haiku-4-5
+      # - key: GHL_API_KEY     # optional: push to a real GHL sub-account
+      #   sync: false
+      # - key: GHL_LOCATION_ID
+      #   sync: false

@@ -59,6 +59,28 @@ With `GHL_*` blank the demo runs in **mock mode**: it stores leads locally and
 logs the exact request it would send to GHL — so the whole flow is visible
 without a live account.
 
+## Deploying (important: needs a Node host, not a static host)
+
+This app has a **backend** (the `/api/*` routes: chat, qualification, GHL push,
+live SSE feed). A **static host like GitHub Pages / Netlify drop cannot run it** —
+the pages would load but every API call returns a 404 HTML page. Deploy to a
+platform that runs Node:
+
+**Render (one-click from GitHub):**
+1. https://render.com → New → **Blueprint** → select this repo (`render.yaml` is included).
+2. Set `ANTHROPIC_API_KEY` when prompted. Deploy. Render injects `PORT` automatically.
+
+**VPS / any Docker host** (closest to a real production setup):
+```bash
+docker build -t lead-demo .
+docker run -p 3000:3000 -e ANTHROPIC_API_KEY=sk-ant-... lead-demo
+```
+Or run directly on the VPS with `npm install && npm start` behind PM2/Nginx.
+
+> The `start` script uses `--env-file-if-exists`, so it loads `.env` locally and
+> falls back to real environment variables in production — no `.env` file needed
+> on the host.
+
 ## How it maps to the real production system
 
 | Demo piece                | In production                                            |
