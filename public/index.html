@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crece con Meta Ads + IA | Demo</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Lead<span>Engine</span></div>
+    <nav>
+      <span class="pill" id="modePill">cargando…</span>
+      <a href="/crm" target="_blank">Ver CRM (GHL) →</a>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <section>
+      <div class="adtag">📣 Anuncio de <b>Meta Ads</b> · Campaña: Captación de Leads</div>
+      <h1>Consigue clientes con <span class="grad">campañas que sí convierten</span></h1>
+      <p>
+        Atraemos tráfico con Meta Ads y lo convertimos en oportunidades reales con
+        un bot de IA que califica cada lead y lo envía a tu CRM al instante.
+      </p>
+      <ul class="checks">
+        <li>Respuesta inmediata 24/7</li>
+        <li>Calificación automática del lead (HOT / WARM / COLD)</li>
+        <li>Integración directa con GoHighLevel</li>
+      </ul>
+      <p style="margin-top:22px; font-size:15px;">
+        👉 Habla con <b>Ana</b>, nuestra asistente de IA, aquí al lado. Te hará un
+        par de preguntas y un asesor te contactará.
+      </p>
+    </section>
+
+    <section class="chat">
+      <div class="chat-head">
+        <div class="avatar">A</div>
+        <div>
+          <div class="who">Ana · Asistente IA</div>
+          <div class="status">● en línea</div>
+        </div>
+      </div>
+      <div class="chat-body" id="chatBody"></div>
+      <form class="chat-foot" id="chatForm">
+        <input id="chatInput" autocomplete="off" placeholder="Escribe tu mensaje…" />
+        <button type="submit" id="sendBtn">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

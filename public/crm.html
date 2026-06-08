@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRM (GoHighLevel) · Leads en vivo</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Lead<span>Engine</span> · CRM</div>
+    <nav>
+      <span class="pill" id="modePill">●  en vivo</span>
+      <a href="/">← Volver a la landing</a>
+    </nav>
+  </header>
+
+  <div class="crm-wrap">
+    <div class="crm-head">
+      <h2>Contactos calificados</h2>
+    </div>
+    <p class="crm-sub">
+      Simulación del sub-account de GoHighLevel. Cada lead que el bot califica
+      aparece aquí en tiempo real, con su score de IA, tags y resumen para el comercial.
+    </p>
+
+    <div class="stats">
+      <div class="stat"><div class="n" id="stTotal">0</div><div class="l">Total leads</div></div>
+      <div class="stat"><div class="n" id="stHot" style="color:var(--hot)">0</div><div class="l">HOT 🔥</div></div>
+      <div class="stat"><div class="n" id="stWarm" style="color:var(--warm)">0</div><div class="l">WARM</div></div>
+      <div class="stat"><div class="n" id="stCold" style="color:var(--cold)">0</div><div class="l">COLD</div></div>
+    </div>
+
+    <div class="cards" id="cards"></div>
+    <div class="empty" id="empty">Aún no hay leads. Ve a la <a href="/">landing</a> y conversa con el bot 👀</div>
+  </div>
+
+  <script src="/crm.js"></script>
+</body>
+</html>
